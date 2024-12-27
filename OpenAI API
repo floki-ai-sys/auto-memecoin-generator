@@ -1,0 +1,20 @@
+import openai
+import requests
+from PIL import Image
+from io import BytesIO
+
+# Set up OpenAI API key
+openai.api_key = "YOUR_API_KEY"
+
+def generate_logo(coin_name):
+    prompt = f"A fun, colorful, and creative logo for the cryptocurrency {coin_name}."
+    response = openai.Image.create(prompt=prompt, n=1, size="1024x1024")
+    image_url = response['data'][0]['url']
+
+    img_response = requests.get(image_url)
+    img = Image.open(BytesIO(img_response.content))
+    img.save(f"{coin_name}_logo.png")
+
+if __name__ == "__main__":
+    coin_name = "ShibaMoon"
+    generate_logo(coin_name)
