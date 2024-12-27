@@ -1,0 +1,7 @@
+openai
+web3
+flask
+requests
+numpy
+python-dotenv
+pillow  # for image processing if needed
