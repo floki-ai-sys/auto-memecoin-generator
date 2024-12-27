@@ -1,0 +1,3 @@
+git add .
+git commit -m "Initial commit: Auto Memecoin Generator"
+git push origin main
