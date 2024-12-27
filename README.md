@@ -1,0 +1,1 @@
+# auto-memecoin-generator
